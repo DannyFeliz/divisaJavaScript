@@ -59,13 +59,16 @@ function calculate() {
   const inputOneCantidad = primerInputNumber.value;
   // const inputDosCantidad = segundoInputNumber.value;
 
-  const conversionRateOne = parseFloat(containerInputOne.querySelector(".select-one").value);
-  const conversionRateTwo = parseFloat(containerInputDos.querySelector(".select-dos").value);
+  const conversionRateOne = parseFloat(containerInputOne.querySelector(".select-one").value || 0);
+  const conversionRateTwo = parseFloat(containerInputDos.querySelector(".select-dos").value || 0);
 
-  const calcular = (conversionRateOne * inputOneCantidad) / inputOneCantidad;
+  let calcular = (inputOneCantidad * conversionRateOne) / conversionRateTwo;
 
   divisaTotal.innerHTML = `$${calcular.toFixed(2)}`;
+
+  
 }
+
 
 
 
